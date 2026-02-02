@@ -49,4 +49,4 @@ Saat drag-and-drop dilakukan, sistem mengunci sinkronisasi eksternal sementara (
 
 Checklist menggunakan data pre-fetching pada level dashboard untuk memastikan progress bar muncul tanpa jeda loading.
 
-Made with ❤️ by [Nama Kamu]
+Made with ❤️ by Rendi Musahikin Abdulah

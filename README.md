@@ -1,6 +1,6 @@
 # 🚀 TaskFlow - Realtime Kanban Board
 
-[🔗 Live Demo Klik di Sini](https://taskflow-demo.vercel.app)
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg?style=for-the-badge)](https://taskflow-rho-two.vercel.app)
 
 TaskFlow adalah aplikasi manajemen tugas (Kanban Board) yang dibangun dengan **Next.js 14**, **Tailwind CSS**, dan **Supabase**. Aplikasi ini mendukung kolaborasi tim secara realtime dengan sinkronisasi data instan.
 

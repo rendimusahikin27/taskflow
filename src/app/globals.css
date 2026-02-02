@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden; /* Tambahan pengaman terakhir */
+  width: 100%;
+}
+
+/* src/app/globals.css */
+* {
+  -webkit-tap-highlight-color: transparent; /* Hapus kotak biru saat tap di mobile */
+}
+
+/* Mencegah user memblokir teks secara tidak sengaja saat menahan kartu */
+.select-none {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Agar scroll horizontal di mobile tetap mulus tapi tidak bentrok dengan drag */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

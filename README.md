@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 TaskFlow - Realtime Kanban Board
 
-## Getting Started
+TaskFlow adalah aplikasi manajemen tugas (Kanban Board) yang dibangun dengan **Next.js 14**, **Tailwind CSS**, dan **Supabase**. Aplikasi ini mendukung kolaborasi tim secara realtime dengan sinkronisasi data instan.
 
-First, run the development server:
+## ✨ Fitur Utama
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Realtime Collaboration**: Perpindahan kartu, penambahan kolom, dan pembaruan checklist tersinkronisasi secara otomatis antar pengguna tanpa refresh.
+- **Interactive Drag & Drop**: Pengalaman intuitif memindahkan tugas antar kolom menggunakan `@dnd-kit`.
+- **Checklist System with Instant Progress**: Pantau progres tugas melalui progress bar di kartu utama yang diperbarui secara instan.
+- **Dynamic Labeling**: Kustomisasi warna kartu untuk kategori tugas yang berbeda.
+- **Optimistic UI**: Perubahan status checklist terasa instan bagi pengguna melalui state management yang cerdas.
+- **Responsive Design**: Tampilan modern dan bersih yang nyaman digunakan di berbagai ukuran layar.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS & Lucide Icons
+- **Database & Realtime**: Supabase (PostgreSQL)
+- **Drag and Drop**: @dnd-kit
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Cara Menjalankan Proyek
 
-## Learn More
+1. **Clone Repository**
+    ```bash
+    git clone [https://github.com/rendimusahikin27/taskflow.git]
+    cd taskflow
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install Dependensi**
+    ```bash
+    npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Konfigurasi Environment** Buat file .env.local diroot folder dan masukkan kredensial Supabase kamu:
+    ```bash
+    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Konfigurasi Database** Pastikan tabel boards, lists, cards, dan checklists sudah tersedia di Supabase. Aktifkan <b>Realtime Replication</b> untuk keempat tabel tersebut di Dashboard Supabase.
 
-## Deploy on Vercel
+5. **Jalankan Aplikasi**
+    ```bash
+    npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Arsitektur Realtime**
+Proyek ini menggunakan pola Optimistic Update dan State Locking.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Saat drag-and-drop dilakukan, sistem mengunci sinkronisasi eksternal sementara (isDraggingRef) untuk mencegah kartu melompat kembali sebelum database selesai diproses.
+
+Checklist menggunakan data pre-fetching pada level dashboard untuk memastikan progress bar muncul tanpa jeda loading.
+
+Made with ❤️ by [Nama Kamu]
